@@ -180,7 +180,6 @@ async function watchInbox(auth){
                 }  
             }
             const interval = Math.floor(Math.random() * (120 - 45 + 1) + 45);
-            console.log(interval);
             setTimeout(()=> {
                watchInbox(auth)
             },interval*1000);
