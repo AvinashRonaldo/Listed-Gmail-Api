@@ -135,7 +135,7 @@ async function vacationStatus(auth){
         else{
             console.log("User is not on Vacation");
         }
-        await watchInbox(auth);
+        await watchInbox(auth)
     } catch(err){
         console.log(err);
     }
@@ -177,10 +177,13 @@ async function watchInbox(auth){
                         repliedEmails.add(threadId);
                         
                       }
-                    const interval = Math.floor(Math.random() * (120 - 45 + 1) + 45);
-                    await sleep(interval * 10);
                 }  
-            };
+            }
+            const interval = Math.floor(Math.random() * (120 - 45 + 1) + 45);
+            console.log(interval);
+            setTimeout(()=> {
+               watchInbox(auth)
+            },interval*1000);
         }
     catch(err){
         console.log(err);
